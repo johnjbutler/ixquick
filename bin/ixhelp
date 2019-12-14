@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Shows README entry for commands
+# Usage: phelp <command>
+
+/ixguard/bin/pgap 1 "----- BEGIN HELP -----" 2
+
+# If no command given, show the whole README and exit
+[[ -z "$1" ]] && cat /ixguard/README.md && exit
+
+# Print from the matched line, to the next Header 2 (##)
+# Print all but the last 3 lines
+sed -n "/^\#\# $1/,/^\#\#/ p" /ixguard/README.md | sed '$d' | sed '$d' | sed '$d'
+
+/ixguard/bin/pgap 2 "----- END HELP -----"

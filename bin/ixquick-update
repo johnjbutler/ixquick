@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Updates ixguard-tools
+
+#Variables
+BASEGITHUB="https://github.com/johnjbutler/ixguard/"
+ixguardDIR="/ixguard"
+
+# Check for flags
+while getopts "d:" OPT; do
+	case $OPT in
+		d)
+			# Set $ixguardDIR to argument
+			ixguardDIR="$OPTARG"
+			;;
+		\?)
+			echo "Invalid option: -$OPTARG" &>2
+			exit 2
+			;;
+		:)
+			echo "Option -$OPTARG requires an argument." &>2
+			exit 2
+			;;
+	esac
+done
+
+# Shifts the option index to after the flags
+shift $(($OPTIND-1))
+
+
+/ixguard/bin/pgap "----------------------------"
+
+# Navigate to base directory
+/ixguard/bin/pgap 0 "Installing in $ixguardDIR ..."
+cd $ixguardDIR
+
+git pull
+
+# Check if git worked
+if [[ $? != 0 ]]; then
+  /ixguard/bin/pgap "!!! Update failed. Try running as root (sudo ixguard-update) !!!"
+  exit
+fi
+
+/ixguard/bin/pgap 2 "* Completing Update... *"
+
+# Make sure bin files have execute permissions
+# chmod -R +x $ixguardDIR/bin
+echo "* Update complete! *"
+/ixguard/bin/pgap "----------------------------"

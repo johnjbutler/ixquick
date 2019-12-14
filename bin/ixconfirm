@@ -1,0 +1,76 @@
+#!/bin/bash
+
+# Asks to confirm if a user wants to do something
+# Usage: ixconfirm [-y | -Y <Confirmation message>] [-n | -N <Rejection message>] [-q question]
+
+
+# Variables
+QUESTION="Are you sure?"
+SELECTMESSAGE="[y/n]"
+ANSWER=""
+YESVERBOSE=0
+YESMESSAGE="Operation confirmed"
+NOVERBOSE=0
+NOMESSAGE="Operation cancelled"
+
+# Check if verbose
+while getopts "ynY:N:q:" OPT; do
+	case $OPT in
+		y)
+			# Set verbose on "Yes" answers to true
+			YESVERBOSE=1
+			;;
+		n)
+			# Set verbose on "No" answers to true
+			NOVERBOSE=1
+			;;
+		Y)
+			# Set verbose on "Yes" answers to true
+			YESVERBOSE=1
+			# Set NOMESSAGE to argument
+			YESMESSAGE="$OPTARG"
+			;;
+		N)
+			# Set verbose on "No" answers to true
+			NOVERBOSE=1
+			# Set NOMESSAGE to argument
+			NOMESSAGE="$OPTARG"
+			;;
+		q)
+			QUESTION="$OPTARG"
+			;;
+		\?)
+			echo "Invalid option: -$OPTARG" &>2
+			exit 2
+			;;
+		:)
+			echo "Option -$OPTARG requires an argument." &>2
+			exit 2
+			;;
+	esac
+done
+
+# Shifts the option index to after the flags
+shift $(($OPTIND-1))
+
+# Set message if available
+[[ -n "$1" ]] && QUESTION="$1"
+
+#Ask to confirm
+read -r -p "$QUESTION $SELECTMESSAGE " ANSWER
+
+# Check their response
+case "$ANSWER" in
+	[Yy])
+		# Return true
+		# If verbose, tell the user
+		(( $YESVERBOSE )) && echo "$YESMESSAGE"
+		exit 0
+		;;
+	*)
+		# Return false
+		# If verbose, tell the user
+		(( $NOVERBOSE )) && echo "$NOMESSAGE"
+		exit 1
+		;;
+esac

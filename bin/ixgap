@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Inserts a gap between standard out statements using echo
+# Usage: pgap [blank_lines_before] [text_to_output] [blank_lines_after]
+
+PRINTLINES () {
+  local NUM=$1
+  # Loop for each $LINES
+  while [[ $NUM > 0 ]]; do
+    # Print a blank "gap" line
+    echo
+
+    # Decrement $NUM by 1
+    ((NUM--))
+  done
+}
+
+# Set the default gap
+LINES=2
+TEXT=""
+AFTER=1
+
+# Set the amount of lines if $1 is set
+[[ -n "$1" ]] && LINES=$1
+
+# Set the text if $2 is set
+[[ -n "$2" ]] && TEXT=$2
+
+# Set post-text gap if $3 is set
+[[ -n "$3" ]] && AFTER=$3
+
+# If $1 is a string, set $LINES to 1 and $AFTER to $2
+if [[ $(/powasp/bin/ptype $1) == "string" ]]; then
+  LINES=1
+  TEXT="$1"
+  AFTER=${2:-'1'} # Set to 1 if $2 not set
+fi
+
+# Print the gap lines
+PRINTLINES $LINES
+
+# If there is text, output it and the $AFTER lines
+if [[ -n "$TEXT" ]]; then
+  echo "$TEXT"
+  PRINTLINES $AFTER
+fi
