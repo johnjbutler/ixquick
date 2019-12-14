@@ -8,6 +8,7 @@ The tools and configuration files that support this can be found immediately bel
 
 /// Run each command at  the Terminal, sequentially.
 
+```
 $ sudo git clone https://github.com/johnjbutler/ixquick /ixquick
 $ sudo bash /ixquick/install.sh
 $ source ~/.bashrc
