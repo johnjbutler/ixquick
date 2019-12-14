@@ -35,7 +35,7 @@ Confirms a user action
 ```
 # Usage:
 
-$ pconfirm [-y | -Y <Confirmation message>] [-n | -N <Rejection message>] [-q <Question>]
+$ ixconfirm [-y | -Y <Confirmation message>] [-n | -N <Rejection message>] [-q <Question>]
 
 
 
@@ -61,18 +61,18 @@ Default Values
 Inserts a gap between standard out statements using echo
 
 ```
-$ pgap [blank_lines_before] [text_to_output] [blank_lines_after]
+$ ixgap [blank_lines_before] [text_to_output] [blank_lines_after]
 ```
 
 
 ## ixgit
 
-Installs a github repository based on shortcuts defined in `/ixguard/etc/pgit.conf`
+Installs a github repository based on shortcuts defined in `/ixquick/etc/ixgit.conf`
 
 *Note: this is not currently used or maintained*
 
 ```
-$ pgit <github-shortcut>
+$ ixgit <github-shortcut>
 ```
 
 
@@ -89,7 +89,7 @@ $ ixhelp <command>
 
 Updates ixguard-tools to the latest version
 
-*Note: `sudo` must be used if updating `/ixguard`*
+*Note: `sudo` must be used if updating `/ixquick`*
 
 *Run `sudo su` followed by `ixguard-update` on certain systems (such as Raspberry Pi)*
 
