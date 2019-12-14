@@ -1,12 +1,8 @@
-# ixQuick - Custom Command Syntax for iXGuard
+# ixquick-tools
 
-iXQuick is a wrapper designed to simply the process of using iXGuard. 
-The tools and configuration files that support this can be found immediately below.
+The tools and configuration files for custom ixquick scripts.
 
-
-# To Install:
-
-Run each command at  the Terminal, sequentially.
+To install:
 
 ```
 $ sudo git clone https://github.com/johnjbutler/ixquick /ixquick
@@ -39,7 +35,7 @@ Confirms a user action
 ```
 # Usage:
 
-$ ixconfirm [-y | -Y <Confirmation message>] [-n | -N <Rejection message>] [-q <Question>]
+$ pconfirm [-y | -Y <Confirmation message>] [-n | -N <Rejection message>] [-q <Question>]
 
 
 
@@ -76,7 +72,7 @@ Installs a github repository based on shortcuts defined in `/ixquick/etc/ixgit.c
 *Note: this is not currently used or maintained*
 
 ```
-$ ixgit <github-shortcut>
+$ pgit <github-shortcut>
 ```
 
 
@@ -85,32 +81,36 @@ $ ixgit <github-shortcut>
 Displays the relevant parts of the README
 
 ```
-$ ixhelp <command>
+$ phelp <command>
 ```
- 
- 
+
 ## ixtype
 
 Outputs variable type as a string
 Possible outputs: int, string
 
 ```
-$ ixtype $VAR
+$ ptype $VAR
 ```
 
+## ixtest
 
-## ixguard-update
+A test to confirm operational executables in $PATH.
 
-Updates ixguard-tools to the latest version
+```
+$ ixtest
+```
+
+## ixquick-update
+
+Updates ixquick-tools to the latest version
 
 *Note: `sudo` must be used if updating `/ixquick`*
 
-*Run `sudo su` followed by `ixguard-update` on certain systems (such as Raspberry Pi)*
+*Run `sudo su` followed by `ixquick-update` on certain systems (such as Raspberry Pi)*
 
 ```
 # Default base directory is /ixquick
 
 $ ixquick-update [-d <Base directory>]
 ```
-
-
