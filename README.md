@@ -1,4 +1,4 @@
-# iXQuick: Seamless Command Syntax for iXGuard
+# ixquick-tools
 
 The tools and configuration files for custom ixquick scripts.
 
@@ -72,7 +72,7 @@ Installs a github repository based on shortcuts defined in `/ixquick/etc/ixgit.c
 *Note: this is not currently used or maintained*
 
 ```
-$ pgit <github-shortcut>
+$ ixgit <github-shortcut>
 ```
 
 
@@ -81,7 +81,7 @@ $ pgit <github-shortcut>
 Displays the relevant parts of the README
 
 ```
-$ phelp <command>
+$ ixhelp <command>
 ```
 
 ## ixtype
@@ -90,7 +90,7 @@ Outputs variable type as a string
 Possible outputs: int, string
 
 ```
-$ ptype $VAR
+$ ixtype $VAR
 ```
 
 ## ixtest
