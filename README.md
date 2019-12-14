@@ -28,7 +28,7 @@ $ ixguard-update
 *It is recommended to go through each file to see how it works. The scripts are all commented and short!*
 
 
-## pconfirm
+## ixconfirm
 
 Confirms a user action
 
@@ -56,7 +56,7 @@ Default Values
 ```
 
 
-## pgap
+## ixgap
 
 Inserts a gap between standard out statements using echo
 
@@ -65,7 +65,7 @@ $ pgap [blank_lines_before] [text_to_output] [blank_lines_after]
 ```
 
 
-## pgit
+## ixgit
 
 Installs a github repository based on shortcuts defined in `/ixguard/etc/pgit.conf`
 
@@ -76,12 +76,12 @@ $ pgit <github-shortcut>
 ```
 
 
-## phelp
+## ixhelp
 
 Displays the relevant parts of the README
 
 ```
-$ phelp <command>
+$ ixhelp <command>
 ```
 
 
@@ -94,17 +94,17 @@ Updates ixguard-tools to the latest version
 *Run `sudo su` followed by `ixguard-update` on certain systems (such as Raspberry Pi)*
 
 ```
-# Default base directory is /ixguard
+# Default base directory is /ixquick
 
-$ ixguard-update [-d <Base directory>]
+$ ixquick-update [-d <Base directory>]
 ```
 
 
-## ptype
+## ixtype
 
 Outputs variable type as a string
 Possible outputs: int, string
 
 ```
-$ ptype $VAR
+$ ixtype $VAR
 ```
