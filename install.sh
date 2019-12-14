@@ -11,7 +11,7 @@ RCSTR="[[ -f /ixquick/.bashrc ]] && source /ixquick/.bashrc # Loads ixguard .bas
 PROFILESTR="[[ -f ~/.bashrc ]] && source ~/.bashrc # Loads .bashrc"
 
 # Ensure bin files have execute permissions
-# chmod -R +x /ixguard/bin
+chmod -R +x /ixguard/bin
 
 
 echo "-----------"
