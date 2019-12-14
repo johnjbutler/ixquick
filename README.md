@@ -1,4 +1,4 @@
-# ixguard-tools
+# ixquick - automated iXGuard command syntax
 
 The tools and configuration files for custom ixguard scripts.
 
@@ -12,13 +12,13 @@ $ source ~/.bashrc
 
 To update:
 ```
-$ sudo ixguard-update
+$ sudo ixquick-update
 ```
 
 or
 ```
 $ sudo su
-$ ixguard-update
+$ ixquick-update
 ```
 
 ---
