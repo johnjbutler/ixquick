@@ -45,6 +45,6 @@ fi
 /ixguard/bin/ixgap 2 "* Completing Update... *"
 
 # Make sure bin files have execute permissions
-# chmod -R +x $ixquickDIR/bin
+chmod -R +x $ixquickDIR/bin
 echo "* Update complete! *"
 /ixquick/bin/ixgap "----------------------------"
