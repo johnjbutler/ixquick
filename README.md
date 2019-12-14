@@ -1,6 +1,7 @@
 # ixQuick - Custom Command Syntax for iXGuard
 
-The tools and configuration files for custom ixguard scripts.
+The tools and configuration files for custom ixguard scripts can be found immediately below.
+Run each command at  the Terminal, sequentially.
 
 To install:
 
