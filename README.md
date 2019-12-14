@@ -1,4 +1,4 @@
-# ixquick - automated iXGuard command syntax
+# ixquick - Automated iXGuard Command Syntax
 
 The tools and configuration files for custom ixguard scripts.
 
