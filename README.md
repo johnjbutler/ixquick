@@ -1,4 +1,4 @@
-# ixquick-tools
+# iXQuick: Seamless Command Syntax for iXGuard
 
 The tools and configuration files for custom ixquick scripts.
 
