@@ -4,14 +4,14 @@
 
 #Variables
 BASEGITHUB="https://github.com/johnjbutler/ixguard/"
-ixguardDIR="/ixguard"
+ixquickDIR="/ixquick"
 
 # Check for flags
 while getopts "d:" OPT; do
 	case $OPT in
 		d)
 			# Set $ixguardDIR to argument
-			ixguardDIR="$OPTARG"
+			ixquickDIR="$OPTARG"
 			;;
 		\?)
 			echo "Invalid option: -$OPTARG" &>2
@@ -28,23 +28,23 @@ done
 shift $(($OPTIND-1))
 
 
-/ixguard/bin/pgap "----------------------------"
+/ixquick/bin/ixgap "----------------------------"
 
 # Navigate to base directory
-/ixguard/bin/pgap 0 "Installing in $ixguardDIR ..."
-cd $ixguardDIR
+/ixguard/bin/pgap 0 "Installing in $ixquickDIR ..."
+cd $ixquickDIR
 
 git pull
 
 # Check if git worked
 if [[ $? != 0 ]]; then
-  /ixguard/bin/pgap "!!! Update failed. Try running as root (sudo ixguard-update) !!!"
+  /ixquick/bin/ixgap "!!! Update failed. Try running as root (sudo ixquick-update) !!!"
   exit
 fi
 
 /ixguard/bin/pgap 2 "* Completing Update... *"
 
 # Make sure bin files have execute permissions
-# chmod -R +x $ixguardDIR/bin
+# chmod -R +x $ixquickDIR/bin
 echo "* Update complete! *"
-/ixguard/bin/pgap "----------------------------"
+/ixquick/bin/ixgap "----------------------------"
