@@ -83,6 +83,16 @@ Displays the relevant parts of the README
 ```
 $ ixhelp <command>
 ```
+ 
+ 
+## ixtype
+
+Outputs variable type as a string
+Possible outputs: int, string
+
+```
+$ ixtype $VAR
+```
 
 
 ## ixguard-update
@@ -100,11 +110,3 @@ $ ixquick-update [-d <Base directory>]
 ```
 
 
-## ixtype
-
-Outputs variable type as a string
-Possible outputs: int, string
-
-```
-$ ixtype $VAR
-```
