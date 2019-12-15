@@ -32,47 +32,62 @@ echo "---------------------------"
 echo " Beginning installation..."
 echo "---------------------------"
 
+
 # Create the files if they don't exist
+
 if [[ ! -f "$PROFILEPATH" ]]; then
   echo "Creating $PROFILEPATH..."
+  echo
   touch "$PROFILEPATH"
 fi
 
 if [[ ! -f "$RCPATH" ]]; then
   echo "Creating $RCPATH..."
+  echo
   touch "$RCPATH"
 fi
 
-echo
-
-
 # Add contents of ixquick .bashrc to local .bashrc (so commands are available in non-login scripts too!)
 # Only if the line isn't already there!
+
 echo "Adding ixquick/bin to ~/.bashrc..."
+
 if [[ -z $(grep -F "$RCSTR" "$RCPATH") ]]; then
   # Error handling
   echo "$RCSTR" >> "$RCPATH" && echo "Added!" || echo "ERROR: Failed to add line to .bashrc! Try adding manually"
 else
   echo "Already added! Skipping..."
+  echo
 fi
-echo
+
 echo "Adding ~/.bashrc to ~/.bash_profile..."
+
 # Make sure .bash_profile pulls from .bashrc for cross-compatibility
 # Only if it hasn't been sourced already!
+
 if [[ -z $(grep -F "~/.bashrc" "$PROFILEPATH") ]]; then
   # Error handling
   echo "$PROFILESTR" >> "$PROFILEPATH" && echo "Added!" || echo "ERROR: Failed to add line to .bash_profile! Try adding manually"
 else
   echo "Already added! Skipping..."
 fi
+
 sleep 1
+
+
 echo "---------------------------"
 echo "Almost complete..."
 echo "---------------------------"
+
+
 sleep 1; echo "      3"; echo; sleep 1; echo "      2"; echo; sleep 1; echo "      1"; sleep 1; echo
+
+
 echo "------------------------"
 echo " Installation Complete!"
 echo "------------------------"
+
+
 echo "         ____  _   _  ____ ____ _____ ____ ____                 "
 echo "        / ___|| | | |/ ___/ ___| ____/ ___/ ___|                "
 echo "        \___ \| | | | |  | |   |  _| \___ \___ \                "
