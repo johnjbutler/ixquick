@@ -1,4 +1,4 @@
-# ixquick-tools
+# iX-Quick: Seamless Command-Line Integration Tool
 
 The tools and configuration files for custom ixquick scripts.
 
@@ -25,10 +25,41 @@ $ ixquick-update
 
 # Available Commands
 
-*It is recommended to go through each file to see how it works. The scripts are all commented and short!*
+## General Operation
+*The following a general system commands which will serve useful*
 
+### qwerty
 
-## ixconfirm
+Simple test function...
+Confirms that your installation is working correctly!
+
+```
+$ ixhelp <command>
+```
+
+### ixhelp
+
+Displays the relevant parts of the README
+
+```
+$ ixhelp <command>
+```
+
+### ixquick-update
+
+Updates ixquick to the latest version
+
+*Note: `sudo` must be used if updating `/ixquick`*
+
+*Run `sudo su` followed by `ixquick-update` on certain systems (such as Raspberry Pi)*
+
+```
+# Default base directory is /ixquick
+
+$ ixquick-update [-d <Base directory>]
+```
+
+### ixconfirm
 
 Confirms a user action
 
@@ -54,63 +85,13 @@ Default Values
 <Rejection message>     "Operation cancelled"
 <Question>              "Are you sure?"
 ```
+## iXQuick Related Functions
 
+*The following functions help automate use-cases within iXGuard*
 
-## ixgap
+###LoadApp
 
-Inserts a gap between standard out statements using echo
-
+Loads application onto attached iOS device for testing
 ```
-$ ixgap [blank_lines_before] [text_to_output] [blank_lines_after]
-```
-
-
-## ixgit
-
-Installs a github repository based on shortcuts defined in `/ixquick/etc/ixgit.conf`
-
-*Note: this is not currently used or maintained*
-
-```
-$ ixgit <github-shortcut>
-```
-
-
-## ixhelp
-
-Displays the relevant parts of the README
-
-```
-$ ixhelp <command>
-```
-
-## ixtype
-
-Outputs variable type as a string
-Possible outputs: int, string
-
-```
-$ ixtype $VAR
-```
-
-## ixtest
-
-A test to confirm operational executables in $PATH.
-
-```
-$ ixtest
-```
-
-## ixquick-update
-
-Updates ixquick-tools to the latest version
-
-*Note: `sudo` must be used if updating `/ixquick`*
-
-*Run `sudo su` followed by `ixquick-update` on certain systems (such as Raspberry Pi)*
-
-```
-# Default base directory is /ixquick
-
-$ ixquick-update [-d <Base directory>]
+$ LoadApp <ApplicationFile>
 ```
