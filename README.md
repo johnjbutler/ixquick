@@ -12,13 +12,13 @@ $ source ~/.bashrc
 
 To update:
 ```
-$ sudo ixquick-update
+$ sudo ix-update
 ```
 
 or
 ```
 $ sudo su
-$ ixquick-update
+$ ix-update
 ```
 
 ---
@@ -45,18 +45,18 @@ Displays the relevant parts of the README
 $ ixhelp <command>
 ```
 
-### ixquick-update
+### ix-update
 
 Updates ixquick to the latest version
 
 *Note: `sudo` must be used if updating `/ixquick`*
 
-*Run `sudo su` followed by `ixquick-update` on certain systems (such as Raspberry Pi)*
+*Run `sudo su` followed by `ix-update` on certain systems (such as Raspberry Pi)*
 
 ```
 # Default base directory is /ixquick
 
-$ ixquick-update [-d <Base directory>]
+$ ix-update [-d <Base directory>]
 ```
 
 ### ixconfirm
