@@ -34,7 +34,7 @@ Simple test function...
 Confirms that your installation is working correctly!
 
 ```
-$ ixhelp <command>
+$ qwerty
 ```
 
 ### ixhelp
@@ -85,11 +85,12 @@ Default Values
 <Rejection message>     "Operation cancelled"
 <Question>              "Are you sure?"
 ```
+
 ## iXQuick Related Functions
 
 *The following functions help automate use-cases within iXGuard*
 
-###LoadApp
+### LoadApp
 
 Loads application onto attached iOS device for testing
 ```
