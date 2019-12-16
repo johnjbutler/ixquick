@@ -1,0 +1,1 @@
+jtool -l -arch $1 $2

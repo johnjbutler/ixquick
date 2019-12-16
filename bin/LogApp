@@ -1,0 +1,8 @@
+Oecho
+echo "[*] Starting Device SysLog..."
+idevicesyslog > LogFile
+echo
+echo "[*] Please start your application to produce a LogFile."
+sleep 3
+echo "[*] Run your application, then exit anytime."
+echo
