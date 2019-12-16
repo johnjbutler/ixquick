@@ -97,30 +97,23 @@ Loads application onto attached iOS device for testing
 $ LoadApp <ApplicationFile.ipa>
 ```
 
-### LogApp (coming soon)
+### LogApp
 
-Starts a SysLog and touches a LogFile to report application runtime information for use during Debugging.
+Invoke SysLog and write to LogFile. Useful during Debugging.
 ```
 $ LogApp
 ```
 
-### Obfuscate (coming soon)
+### Obfuscate
 
 Obfuscates input IPA file with iXGuard configuration file. Outputs Obfuscatedd IPA with specified file name.
 ```
-$ Obfuscate <File1.IPA> <NewFileName.IPA>
+$ Obfuscate <Example.IPA> <NewFileName.IPA>
 ```
 
-### FindConfigKey (coming soon)
+### FindBitMach
 
-Locates your config key.
+Dumps application Bitcode and Machine Code for manual review. Useful in many cases!
 ```
-$ (coming soon)
-```
-
-### FindBitMach (coming soon)
-
-Dumps application Bitcode and Machine Code for Manual Review. Useful in many cases!
-```
-$ FindBitMach
+$ FindBitMach <Architecture-Type> <Example.IPA>
 ```
